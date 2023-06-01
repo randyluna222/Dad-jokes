@@ -10,16 +10,20 @@
 </head>
 
 <body>
-  <div>
-  <button id="randomJoke">Random Joke</button>
+  <main>
+    <div id="jokesGenerator1" class="jokes-generator1"></div>
+    <button id="randomJoke">Random Joke</button>
 
-  <input id="search" type="text" placeholder="Search Your Jokes..." required>
-  <button onclick="searchJoke()">Search</button>
-</div>
-  <div id="jokesGenerator" class="jokes-generator"></div>
+    <form>
+      <input id="search" type="text" placeholder="Search Your Jokes..." required>
+      <button id="btnsearch">Search</button>
+    </form>
+    <div id="jokesGenerator" class="jokes-generator"></div>
+  </main>
 
 
-  <script  src="app.js"></script>
+
+  <script type="module" src="./app.js"></script>
 </body>
 
 </html>
