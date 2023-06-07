@@ -1,22 +1,17 @@
-import { searchJoke, displayJokes } from "./apisearch.js";
-import { getJoke } from "./api.js";
+import { getRandomJoke, searchJoke } from './js/modules/api.js';
+import { randomJoke} from "./js/modules/randomJokeHome.js";
+import { displayJokes } from "./js/modules/searchjoke.js";
 
-// Random Joke
-export const btnJoke = document.getElementById("randomJoke");
-export const resultContainer = document.getElementById("jokesGenerator1");
 
-const jokeElement = document.createElement("p");
+const btnRandomJoke = document.getElementById('randomJoke');
+const btnsearch = document.getElementById('searchJoke');
 
-btnJoke.addEventListener("click", () => {
-  getJoke("https://icanhazdadjoke.com/").then((joke) => {
-    const jokeText = document.createElement("a");
-    jokeText.href = "./product.html"; 
 
-    jokeText.textContent = joke;
-    jokeElement.appendChild(jokeText);
-    resultContainer.appendChild(jokeElement);
-  });
-});
+btnRandomJoke.addEventListener('click', randomJoke);
+btnsearch.addEventListener('click', displayJokes);
 
 searchJoke();
-displayJokes();
+getRandomJoke();
+
+
+
