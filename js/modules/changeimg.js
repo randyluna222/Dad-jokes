@@ -1,4 +1,3 @@
-// Array de productos
 const products = [
   {
     id: 'shirt',

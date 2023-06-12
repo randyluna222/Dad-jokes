@@ -1,8 +1,3 @@
-//import { displayJokes } from "./searchjoke.js";
-
-//displayJokes(),
-
-
 const apiUrl = "https://icanhazdadjoke.com";
 const headers = {
   Accept: 'application/json',

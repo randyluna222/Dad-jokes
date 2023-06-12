@@ -1,7 +1,7 @@
 import { Publish } from "./publish.js";
 import { getRandomJoke } from "./api.js";
 
-// Random Joke
+
 
 export const jokeChange = new Publish('jokeChange');
 
