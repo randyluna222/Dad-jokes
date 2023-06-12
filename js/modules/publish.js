@@ -1,4 +1,4 @@
-class Publish {
+export class Publish {
   constructor(eventName) {
     this.event = eventName;
   }
@@ -12,4 +12,3 @@ class Publish {
   }
 }
 
-export { Publish }

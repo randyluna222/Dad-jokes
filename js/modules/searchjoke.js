@@ -1,27 +1,35 @@
-import {searchJoke} from './api.js'
+import { searchJoke } from './api.js';
 
-// Chistes encontrados
- 
+////
+const searchInput = document.getElementById('searchInput');
+const jokesGenerator = document.getElementById('jokesGenerator');
 
+async function displayJokes(event) {
+  event.preventDefault();
+  const searchh = searchInput.value.trim();
 
-export async function displayJokes() {
-  const searchInput = document.getElementById('searchInput');
-  const search = searchInput;
-
-  if (!search) {
+  if (!searchh) {
+    jokesGenerator.innerHTML = 'Type something!!';
     return;
   }
-  const data = await searchJoke(search);
-  const { joke } = data;
-  const result = document.getElementById("jokesGenerator");
 
-  const jokeElement = document.createElement("p");
-  const jokeText = document.createElement("a");
-  jokeText.href = "./product.html";
-  jokeText.textContent = joke.data;
+  const data = await searchJoke(searchh);
 
-  jokeElement.appendChild(jokeText);
-  result.appendChild(jokeElement);
+  if (!data.results || !data.results.length) {
+    jokesGenerator.innerHTML = 'Dont exist this type of jokes';
+  } else {
+    const jokes = data.results.map((result) => ({
+      id: result.id,
+      text: result.joke
+    }));
+
+    jokesGenerator.innerHTML = '<ul>' + jokes.map(joke => `<li><a href="productPage.html?id=${joke.id}" id="${joke.id}">${joke.text}</a></li>`).join('') + '</ul>';
+  }
 }
 
+export const initSearch = () => {
+  const specificBtn = document.getElementById('searchJoke');
+
+  specificBtn.addEventListener('click', displayJokes);
+}
 

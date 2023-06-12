@@ -21,37 +21,47 @@ export async function getRandomJoke()  {
 }
 
 // Buscar chistes
+
+const apiUrll = "https://icanhazdadjoke.com/search?term=";
+
 export async function searchJoke(search) {
-  
   if (!search) {
-    return
+    return;
   }
-  return fetch(`${apiUrl}search?term=${search}`,{
-    headers : headers,
-})
-  
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log(error);
-  });
+
+  return fetch(apiUrll + search, {
+    headers: headers,
+  })
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 //Retorna por id
 
-export function jokeId(Id) {
-  
-  if (!Id) {
-    return
+
+export async function jokeIdd(id) {
+  if (!id) {
+    return;
   }
-  fetch(apiUrl = `https://icanhazdadjoke.com/j/${Id}`,{
-    headers : headers,
-})
-  
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log(error);
-  });
+
+  const apiUrl = 'https://icanhazdadjoke.com/';
+  return fetch(`${apiUrl}j/${id}`, {
+    headers: headers,
+  })
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log(error);
+    });
 }
+
+
+
+
+
+
+
 
 
 

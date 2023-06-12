@@ -1,7 +1,7 @@
-*{
+* {
   margin: 0;
-  gap: 1%;
-  padding: 3% 0%;
+
+  padding: 2% 0%;
 }
 
 body {
@@ -22,9 +22,9 @@ button {
   font-size: 15px;
   color: black;
   z-index: 1;
- }
- 
- button:before {
+}
+
+button:before {
   content: "";
   position: absolute;
   left: 50%;
@@ -37,9 +37,9 @@ button {
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
- }
- 
- button:after {
+}
+
+button:after {
   content: "";
   position: absolute;
   left: 55%;
@@ -52,50 +52,102 @@ button {
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
- }
- 
- button:hover {
+}
+
+button:hover {
   color: #ffffff;
   border: 1px solid #39bda7;
- }
- 
- button:hover:before {
+}
+
+button:hover:before {
   top: -35%;
   background-color: #39bda7;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
- }
- 
- button:hover:after {
+}
+
+button:hover:after {
   top: -45%;
   background-color: #39bda7;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
- }
+}
 
- input {
-  width: 36%;
+input {
+  width: 28%;
   height: 40px;
   line-height: 28px;
   padding: 0 1rem;
-  padding-left: 2.3rem;
+  padding-left: 1.1rem;
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
   background-color: #f3f3f4;
   color: #0d0c22;
   transition: .3s ease;
- }
- 
- input::placeholder {
+}
+
+input::placeholder {
   color: #9e9ea7;
- }
- 
- input:focus, input:hover {
+}
+
+input:focus,
+input:hover {
   outline: none;
   border-color: #39bda7;
   background-color: #fff;
   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
- }
+}
 
 
+#jokesGenerator1 {
+  border: 60px solid #969595;
+  border-radius: 5px;
+  padding: 14px;
+  width: 731px;
+  height: 200px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+}
 
- 
+#jokesGenerator {
+  width: 549px;
+  border: 90px solid #969595;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  z-index: 0; 
+}
+
+#randomJoke{
+  position: absolute;
+  top: 70%;
+  right: 44%;
+}
+
+
+img{
+  width: 16%;
+}
+
+.random-container {
+  position: relative;
+  z-index: 1;
+}
+
+.search-container {
+  position: relative;
+  z-index: 1;
+}
+
+#searchInput {
+  position: absolute;
+  top: 10%;
+  left: 22%;
+  z-index: 1;
+}
+
+.position2 {
+  position: absolute;
+  top: 11%;
+  right: 27%;
+}

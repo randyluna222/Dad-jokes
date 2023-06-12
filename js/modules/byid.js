@@ -1,17 +1,7 @@
-import { jokeChange } from './randomJokeHome.js'
-
-const initDetails = () => {
-  jokeChange.subscribe(handleJokeChange);
-}
-
-const handleJokeChange = (data) => {
-  const { detail } = data;
+export async function getJokeId() {
+  const id = new URLSearchParams(window.location.search).get('id')
   
-  const preview = document.getElementById('jokeVisualization');
-  const renderJoke = document.getElementById('renderJoke');
-
-  preview.innerHTML = detail;
-  renderJoke.innerHTML = detail;
+  return id;
 }
 
-export { initDetails }
+

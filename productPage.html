@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="./css/productStyle.css">
+  <title>Product</title>
+</head>
+
+<body>
+  <main>
+
+    <div class="mainProduct">
+      <span class="product-one">
+        <p id="secondJokeText"></p>
+        <img class="mainProductImg" src="./img/product-shirt-black.jpg" alt="#">
+        <input type="radio" class="colorimg1" data-id="black" name="color">
+        <input type="radio" class="colorimg2" data-id="white" name="color">
+        <h2>Choose another product</h2>
+      </span>
+
+      <span class="product-info">
+        <h2 id="productName">Black Shirt with Joke</h2>
+        <p id="productPrice">$25</p>
+        <button id="AddProduct">Add to cart</button>
+        <p><strong>Joke:</strong><span id="gettjokeId"></span></p>
+        <div id="jokesGenerator1" ></div>
+        <button  id="randomJoke">Random Joke</button>
+        <button class="material-symbols-outlined colorBotton" id="cart">shopping_cart</button>
+      </span>
+
+    </div>
+
+    <div class="another-section">
+      <button id="almohada" class="product">
+        <img  id="almohada" src="./img/product-pillow-white.jpg" alt="#">
+      </button>
+      <button id="case" class="product">
+        <img id="case" src="./img/product-poster-white.jpg" alt="#">
+      </button>
+      <button id="poster" class="product">
+        <img id="poster" src="./img/product-case-white.jpg" alt="#">
+      </button>
+    </div>
+
+    <div id="cartModal" class="modal">
+      <span class="modal-content">
+        <span class="close material-symbols-outlined">close</span>
+        <h2>Cart</h2>
+        <span id="cartContent"></span>
+        <button class="colorBotton" id="ClearRecent">Remove</button>
+        <button  class="colorBotton" id="ClearAll">Remove All</button>
+      </span>
+    </div>
+
+  </main>
+
+  <script type="module" src="./product.js"></script>
+
+</body>
+
+</html>
